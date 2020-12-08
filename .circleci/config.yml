@@ -16,4 +16,4 @@ jobs:
          command: bundle install
      - run:
          name: Execute fastlane
-         command: bundle exec fastlane playstore
+         command: bundle exec fastlane android deploy
