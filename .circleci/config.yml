@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
  android: circleci/android@0.2.0
-
+                                                   
 jobs:
  build:
    executor: android/android
@@ -12,8 +12,8 @@ jobs:
      - run:
          command: ./gradlew build
      - run:
-	 name: Install fastlane
+         name: Install fastlane
          command: bundle install
      - run:
-	 name: Execute fastlane
-	 command: bundle exec fastlane playstore
+         name: Execute fastlane
+         command: bundle exec fastlane playstore
