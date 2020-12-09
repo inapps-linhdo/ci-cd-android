@@ -46,7 +46,8 @@ platform :android do
       app: "1:814302396364:android:da0049e3d370d2f1dae769",
       testers: "linh.do@inapps.net, linh.do@easybook.com",
       release_notes: "LINH test CI Lots of amazing new features to test out!",
-      firebase_cli_path: "/usr/local/bin/firebase"
+      firebase_cli_path: "/usr/local/bin/firebase",
+      service_credentials_file:"./fastlane/testci-52803-00063577ebd0.json"
     )
   end
 end
