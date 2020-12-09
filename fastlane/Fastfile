@@ -35,4 +35,18 @@ platform :android do
     gradle(task: "clean assembleRelease")
     upload_to_play_store
   end
+
+  desc "My awesome app"
+  lane :distribute do
+    gradle(
+      task: 'assembleDev',
+      build_type: 'Release'
+    )
+    firebase_app_distribution(
+      app: "1:814302396364:android:da0049e3d370d2f1dae769",
+      testers: "linh.do@inapps.net, linh.do@easybook.com",
+      release_notes: "LINH test CI Lots of amazing new features to test out!",
+      firebase_cli_path: "/usr/local/bin/firebase"
+    )
+  end
 end

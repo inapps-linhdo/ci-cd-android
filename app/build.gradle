@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
+    flavorDimensions "mode"
     defaultConfig {
         applicationId "dev.idee.cicdandroid"
         minSdkVersion 21
@@ -20,6 +21,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    productFlavors {
+        dev {
+            buildConfigField "boolean", "LOGGING", "true"
+            buildConfigField "boolean", "CRASH_REPORTING", "true"
+        }
+        prod {
+            buildConfigField "boolean", "LOGGING", "false"
+            buildConfigField "boolean", "CRASH_REPORTING", "false"
         }
     }
 }
